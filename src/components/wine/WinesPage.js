@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import * as wineActions from '../../actions/wineActions';
 
 class WinesPage extends React.Component {
@@ -24,7 +25,7 @@ class WinesPage extends React.Component {
     }
 
     onClickSave() {
-        this.props.dispatch(wineActions.createWine(this.state.wine));
+        this.props.actions.createWine(this.state.wine);
     }
 
     wineRow(wine, index) {
@@ -55,8 +56,8 @@ class WinesPage extends React.Component {
 }
 
 WinesPage.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    wines: PropTypes.array.isRequired
+    wines: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state, ownProps) {
@@ -65,6 +66,11 @@ function mapStateToProps(state, ownProps) {
     };
 }
 
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(wineActions, dispatch)
+    };
+}
+
 // Export component decorated by React-Redux Connect function to interact with Redux
-// Connect() doesn't have 2nd params, so connect() will inject dispatch - See onClickSave()
-export default connect(mapStateToProps)(WinesPage);
+export default connect(mapStateToProps, mapDispatchToProps)(WinesPage);
