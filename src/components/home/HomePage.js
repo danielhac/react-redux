@@ -5,7 +5,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="jumbotron">
-                <h1>Administration</h1>
+                <h1>React.js</h1>
                 <p>React, React Components, React Router in ES6 for my wine mind.</p>
                 <Link to="about" className="btn btn-primary btn-lg">Wines</Link>
             </div>

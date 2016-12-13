@@ -1,5 +1,5 @@
 {
-  "name": "react-redux",
+  "name": "react-redux-basic-flow",
   "version": "1.0.0",
   "description": "REDUX basic flow for React and React-Router with ES6",
   "scripts": {
@@ -64,6 +64,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielhac/react-redux"
+    "url": "https://github.com/danielhac/react-redux-basic-flow"
   }
 }
