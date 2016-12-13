@@ -1,6 +1,8 @@
+import * as types from '../actions/actionTypes';
+
 export default function wineReducer(state = [], action) {
     switch(action.type) {
-        case 'CREATE_WINE':
+        case types.CREATE_WINE:
             return [...state,
                 Object.assign({}, action.wine)
             ];
